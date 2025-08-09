@@ -57,4 +57,32 @@
   .card-hover {
     @apply hover:scale-105 hover:-translate-y-2 transition-all duration-300;
   }
+
+  /* Animated border that subtly moves and changes color on hover */
+  .border-animated {
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem; /* matches rounded-xl */
+  }
+
+  .border-animated::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px; /* thin border */
+    background: linear-gradient(120deg, rgba(255,255,255,0.1), rgba(255,255,255,0.25), rgba(255,255,255,0.1));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+    transition: background-position 600ms ease, background 300ms ease;
+    background-size: 300% 300%;
+    background-position: 0% 50%;
+  }
+
+  .border-animated:hover::before {
+    background: linear-gradient(120deg, rgba(255,255,255,0.25), rgba(255,255,255,0.6), rgba(255,255,255,0.25));
+    background-position: 100% 50%;
+  }
 }

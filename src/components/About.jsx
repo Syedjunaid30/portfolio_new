@@ -173,17 +173,17 @@ const About = () => {
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="bg-gray-900 rounded-xl p-6 border-l-4 border-cyan-400 border border-gray-800 shadow-lg shadow-cyan-500/10"
+                  className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border-animated shadow-lg shadow-black/10"
                 >
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
                     <h4 className="text-xl font-semibold text-white">
                       {exp.title}
                     </h4>
-                    <span className="text-primary-400 font-medium">
+                    <span className="text-white bg-white/10 px-3 py-1 rounded-full text-sm font-medium">
                       {exp.period}
                     </span>
                   </div>
-                  <p className="text-primary-400 font-medium mb-3">
+                  <p className="text-gray-300 font-medium mb-3">
                     {exp.company}
                   </p>
                   <p className="text-gray-400">
