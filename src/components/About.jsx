@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Code, Database, Globe, Smartphone } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
+import myPhoto from '../assets/profile.jpeg';
 
 const About = () => {
   const [ref, isInView] = useInView();
@@ -122,10 +123,8 @@ const About = () => {
                 </div>
               </div>
               <div className="relative">
-                <div className="w-full h-80 bg-gradient-to-br from-gray-900 to-black rounded-2xl flex items-center justify-center border border-gray-800 shadow-2xl shadow-cyan-500/20">
-                  <span className="text-6xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent animate-pulse">
-                    &lt;/&gt;
-                  </span>
+                <div className="w-full h-64 md:h-80 bg-black flex items-center justify-center">
+                  <img src={myPhoto} alt="Profile" className="max-h-full w-auto object-contain rounded-2xl border border-gray-800 shadow-2xl shadow-black/20" />
                 </div>
               </div>
             </div>

@@ -41,7 +41,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-12">
           {/* Logo */}
           <motion.div
-            className="text-base font-bold text-cyan-400"
+            className="text-base font-bold text-white"
           >
             Portfolio
           </motion.div>
@@ -53,8 +53,8 @@ const Navbar = () => {
                 key={item.name}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => scrollToSection(item.href)}
-                className={`text-xs font-medium transition-colors duration-200 ${activeSection === item.href.slice(1)
-                  ? 'text-cyan-400'
+                className={`text-xs font-medium transition-colors duration-200 hover:text-white ${activeSection === item.href.slice(1)
+                  ? 'text-white'
                   : 'text-gray-300'
                   }`}
               >
@@ -86,8 +86,8 @@ const Navbar = () => {
               <motion.button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className={`block w-full text-left px-4 py-2 text-sm font-medium transition-colors duration-200 ${activeSection === item.href.slice(1)
-                  ? 'text-cyan-400 bg-cyan-900/20'
+                className={`block w-full text-left px-4 py-2 text-sm font-medium transition-colors duration-200 hover:text-white ${activeSection === item.href.slice(1)
+                  ? 'text-white bg-white/10'
                   : 'text-gray-300'
                   }`}
               >
