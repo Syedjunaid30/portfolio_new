@@ -58,7 +58,7 @@ const Navbar = () => {
             <motion.button
               whileTap={{ scale: 0.9 }}
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-lg bg-gray-800 text-gray-300"
+              className="p-2 rounded-lg text-gray-300"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </motion.button>
@@ -69,7 +69,7 @@ const Navbar = () => {
         <motion.div
           initial={false}
           animate={{ height: isOpen ? "auto" : 0 }}
-          className="md:hidden overflow-hidden bg-black border-t border-gray-800"
+          className="md:hidden overflow-hidden"
         >
           <div className="py-4 space-y-2">
             {navItems.map((item) => (

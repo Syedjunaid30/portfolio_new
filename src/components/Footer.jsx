@@ -27,7 +27,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-black text-white border-t border-gray-800">
+    <footer className="bg-black/95 backdrop-blur-sm text-white border-t border-gray-800/50">
       <div className="container-custom">
         {/* Main Footer Content */}
         <div className="py-12 grid md:grid-cols-3 gap-8">
@@ -93,7 +93,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 dark:border-gray-900 py-6">
+        <div className="border-t border-gray-800/50 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center space-x-2 text-gray-400 mb-4 md:mb-0">
               <span>© 2024 Syed Junaid. Made with</span>
