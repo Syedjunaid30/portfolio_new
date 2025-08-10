@@ -96,7 +96,7 @@ const Footer = () => {
         <div className="border-t border-gray-800/50 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center space-x-2 text-gray-400 mb-4 md:mb-0">
-              <span>© 2024 Syed Junaid. Made with</span>
+              <span>© 2025 Syed Junaid. Made with</span>
               <motion.div
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 1, repeat: Infinity }}
