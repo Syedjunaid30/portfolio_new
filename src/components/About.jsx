@@ -1,56 +1,59 @@
-import { motion } from 'framer-motion';
-import { Code, Database, Globe, Smartphone } from 'lucide-react';
-import { useInView } from '../hooks/useInView';
-import myPhoto from '../assets/profile.jpeg';
+import { motion } from "framer-motion";
+import { Code, Database, Globe, Smartphone } from "lucide-react";
+import { useInView } from "../hooks/useInView";
+import myPhoto from "../assets/profile.png";
 
 const About = () => {
   const [ref, isInView] = useInView();
 
   const skills = [
     {
-      category: 'Frontend',
+      category: "Frontend",
       icon: Globe,
-      items: ['HTML', 'CSS', 'JavaScript', 'React', 'Tailwind CSS'],
-      color: 'from-blue-500 to-cyan-500',
+      items: ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS"],
+      color: "from-blue-500 to-cyan-500",
     },
     {
-      category: 'Backend',
+      category: "Backend",
       icon: Database,
-      items: ['Python', 'Flask', 'MySQL', 'SQL', 'REST APIs'],
-      color: 'from-green-500 to-emerald-500',
+      items: ["Python", "Flask", "MySQL", "SQL", "REST APIs"],
+      color: "from-green-500 to-emerald-500",
     },
     {
-      category: 'AI/ML',
+      category: "AI/ML",
       icon: Smartphone,
-      items: ['Deep Learning', 'OpenCV', 'Mediapipe', 'NLP', 'Wav2Lip'],
-      color: 'from-purple-500 to-pink-500',
+      items: ["Deep Learning", "OpenCV", "Mediapipe", "NLP", "Wav2Lip"],
+      color: "from-purple-500 to-pink-500",
     },
     {
-      category: 'Tools',
+      category: "Tools",
       icon: Code,
-      items: ['Git', 'VS Code', 'Jupyter', 'Python IDEs', 'Data Visualization'],
-      color: 'from-orange-500 to-red-500',
+      items: ["Git", "VS Code", "Jupyter", "Python IDEs", "Data Visualization"],
+      color: "from-orange-500 to-red-500",
     },
   ];
 
   const experience = [
     {
-      title: 'Software Development Intern',
-      company: 'CDAC Bengaluru, Electronic City',
-      period: '2024',
-      description: 'Developed a secure online voting system with face recognition technology. Implemented real-time result dashboard and admin panel using Python Flask and MySQL.',
+      title: "Software Development Intern",
+      company: "CDAC Bengaluru, Electronic City",
+      period: "2025",
+      description:
+        "Developed a secure online voting system with face recognition technology. Implemented real-time result dashboard and admin panel using Python Flask and MySQL.",
     },
     {
-      title: 'Final Year Project',
-      company: 'Academic Institution',
-      period: '2024',
-      description: 'Created an AI-powered video dubbing system with lip synchronization using deep learning. Integrated Wav2Lip technology for realistic dubbing results.',
+      title: "Final Year Project",
+      company: "VTU University",
+      period: "2025",
+      description:
+        "Created an AI-powered video dubbing system with lip synchronization using deep learning. Integrated Wav2Lip technology for realistic dubbing results.",
     },
     {
-      title: 'Computer Science Student',
-      company: 'University/College',
-      period: '2021 - 2024',
-      description: 'Focused on AI/ML, web development, and computer vision. Completed multiple projects including hand tracking systems and NLP-to-SQL conversion tools.',
+      title: "Computer Science Student",
+      company: "VTU University",
+      period: "2021 - 2025",
+      description:
+        "Focused on AI/ML, web development, and computer vision. Completed multiple projects including hand tracking systems and NLP-to-SQL conversion tools.",
     },
   ];
 
@@ -66,7 +69,7 @@ const About = () => {
   };
 
   const itemVariants = {
-    hidden: { 
+    hidden: {
       opacity: 0,
       y: 50,
     },
@@ -94,9 +97,10 @@ const About = () => {
               About Me
             </h2>
             <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-              I'm a passionate computer science student specializing in AI/ML and full-stack development.
-              I love creating innovative solutions that bridge the gap between artificial intelligence
-              and practical applications.
+              I'm a passionate computer science student specializing in AI/ML
+              and full-stack development. I love creating innovative solutions
+              that bridge the gap between artificial intelligence and practical
+              applications.
             </p>
           </motion.div>
 
@@ -109,22 +113,29 @@ const About = () => {
                 </h3>
                 <div className="space-y-4 text-gray-400">
                   <p>
-                    Started my journey in computer science with a focus on AI/ML and web development.
-                    Discovered my passion for creating intelligent applications that solve real-world problems.
+                    Started my journey in computer science with a focus on AI/ML
+                    and web development. Discovered my passion for creating
+                    intelligent applications that solve real-world problems.
                   </p>
                   <p>
-                    Through internships and academic projects, I've gained hands-on experience in
-                    developing secure web applications, AI-powered systems, and computer vision solutions.
+                    Through internships and academic projects, I've gained
+                    hands-on experience in developing secure web applications,
+                    AI-powered systems, and computer vision solutions.
                   </p>
                   <p>
-                    When I'm not coding, you can find me exploring new AI technologies,
-                    working on innovative projects, or learning about the latest developments in machine learning.
+                    When I'm not coding, you can find me exploring new AI
+                    technologies, working on innovative projects, or learning
+                    about the latest developments in machine learning.
                   </p>
                 </div>
               </div>
               <div className="relative">
                 <div className="w-full h-64 md:h-80 bg-black flex items-center justify-center">
-                  <img src={myPhoto} alt="Profile" className="max-h-full w-auto object-contain rounded-2xl border border-gray-800 shadow-2xl shadow-black/20" />
+                  <img
+                    src={myPhoto}
+                    alt="Profile"
+                    className="max-h-full w-auto object-contain rounded-2xl border-4 border-white shadow-2xl shadow-black/20"
+                  />
                 </div>
               </div>
             </div>
@@ -142,7 +153,9 @@ const About = () => {
                   variants={itemVariants}
                   className="bg-gray-900 rounded-xl p-6 text-center border border-gray-800 shadow-lg shadow-cyan-500/10"
                 >
-                  <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r ${skill.color} flex items-center justify-center`}>
+                  <div
+                    className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r ${skill.color} flex items-center justify-center`}
+                  >
                     <skill.icon size={32} className="text-white" />
                   </div>
                   <h4 className="text-xl font-semibold text-white mb-3">
@@ -186,9 +199,7 @@ const About = () => {
                   <p className="text-gray-300 font-medium mb-3">
                     {exp.company}
                   </p>
-                  <p className="text-gray-400">
-                    {exp.description}
-                  </p>
+                  <p className="text-gray-400">{exp.description}</p>
                 </motion.div>
               ))}
             </div>

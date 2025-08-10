@@ -1,7 +1,7 @@
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import About from './components/About';
-import ProjectShowcase from './components/ProjectShowcase';
+import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -12,7 +12,7 @@ function App() {
       <main>
         <Home />
         <About />
-        <ProjectShowcase />
+        <Projects />
         <Contact />
       </main>
       <Footer />
