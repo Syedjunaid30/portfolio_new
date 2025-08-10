@@ -87,7 +87,7 @@ const Home = () => {
                   <motion.span
                     animate={{ opacity: [1, 0] }}
                     transition={{ duration: 0.8, repeat: Infinity }}
-                    className="text-cyan-400"
+                    className="text-white"
                   >
                     |
                   </motion.span>
@@ -147,9 +147,9 @@ const Home = () => {
               className="flex justify-center space-x-6 mb-12"
             >
               {[
-                { icon: Github, href: "#", label: "GitHub" },
-                { icon: Linkedin, href: "#", label: "LinkedIn" },
-                { icon: Mail, href: "#", label: "Email" },
+                { icon: Github, href: "https://github.com/Syedjunaid30", label: "GitHub" },
+                { icon: Linkedin, href: "https://www.linkedin.com/in/syedjunaid21", label: "LinkedIn" },
+                { icon: Mail, href: "mailto:junaid68555@gmail.com", label: "Email" },
               ].map(({ icon: Icon, href, label }) => (
                 <motion.a
                   key={label}

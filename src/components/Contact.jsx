@@ -19,19 +19,19 @@ const Contact = () => {
         {
             icon: Mail,
             label: 'Email',
-            value: 'syedjunaid@example.com',
-            href: 'mailto:syedjunaid@example.com',
+            value: 'junaid68555@gmail.com',
+            href: 'mailto:junaid68555@gmail.com',
         },
         {
             icon: Phone,
             label: 'Phone',
-            value: '+91 XXXXX XXXXX',
-            href: 'tel:+91XXXXXXXXX',
+            value: '+91 8431102124',
+            href: 'tel:+918431102124',
         },
         {
             icon: MapPin,
             label: 'Location',
-            value: 'Your Location',
+            value: 'Bengaluru, India',
             href: '#',
         },
     ];

@@ -42,6 +42,13 @@ const About = () => {
         "Developed a secure online voting system with face recognition technology. Implemented real-time result dashboard and admin panel using Python Flask and MySQL.",
     },
     {
+      title: "Cloud Application Developer Intern",
+      company: "Rooman Technologies, Bengaluru",
+      period: "2025",
+      description:
+        "Developed a cloud-based backup and recovery system using IBM Cloud Object Storage. Automated backup scheduling with Python, reducing manual effort by 80%. Improved data retrieval speed by 25% through indexed storage and implemented data validation for backup integrity.",
+    },
+    {
       title: "Final Year Project",
       company: "VTU University",
       period: "2025",
