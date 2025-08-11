@@ -3,22 +3,41 @@ import { ChevronDown, Github, Linkedin, Mail, Download } from "lucide-react";
 import { useInView } from "../hooks/useInView";
 import { useTypewriter } from "../hooks/useTypewriter";
 import VantaTopology from "./VantaTopology";
+import { useState, useEffect } from "react";
 
 const Home = () => {
   const [ref, isInView] = useInView();
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Optimize typewriter for mobile
+  const typewriterSpeed = isMobile ? 150 : 100;
+  const typewriterDelay = isMobile ? 500 : 1000;
+
   const { displayText, isComplete } = useTypewriter(
     "AI/ML Developer & Full Stack Engineer",
-    100,
-    1000
+    typewriterSpeed,
+    typewriterDelay
   );
 
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  // Simplified animations for mobile
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1,
+        staggerChildren: isMobile ? 0.1 : 0.2,
+        delayChildren: isMobile ? 0.05 : 0.1,
       },
     },
   };
@@ -26,13 +45,13 @@ const Home = () => {
   const itemVariants = {
     hidden: {
       opacity: 0,
-      y: 50,
+      y: isMobile ? 20 : 50,
     },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.8,
+        duration: isMobile ? 0.4 : 0.8,
         ease: "easeOut",
       },
     },
@@ -109,33 +128,33 @@ const Home = () => {
               className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
             >
               <motion.button
-                whileTap={{ scale: 0.95 }}
+                whileTap={isMobile ? {} : { scale: 0.95 }}
                 onClick={() =>
                   document
                     .getElementById("projects")
                     .scrollIntoView({ behavior: "smooth" })
                 }
-                className="px-8 py-3 rounded-lg bg-black/40 backdrop-blur-sm text-white font-medium hover:bg-black/60 transition-all duration-300 border border-gray-600/50 shadow-lg shadow-black/50"
+                className="px-6 sm:px-8 py-3 rounded-lg bg-black/40 backdrop-blur-sm text-white font-medium hover:bg-black/60 transition-all duration-200 border border-gray-600/50 shadow-lg shadow-black/50 touch-manipulation"
               >
                 View My Work
               </motion.button>
               <motion.a
                 href="/resume.pdf"
                 download="Syed_Junaid_Resume.pdf"
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 rounded-lg bg-black/40 backdrop-blur-sm text-white font-medium hover:bg-black/60 transition-all duration-300 border border-gray-600/50 shadow-lg shadow-black/50 flex items-center justify-center gap-2"
+                whileTap={isMobile ? {} : { scale: 0.95 }}
+                className="px-6 sm:px-8 py-3 rounded-lg bg-black/40 backdrop-blur-sm text-white font-medium hover:bg-black/60 transition-all duration-200 border border-gray-600/50 shadow-lg shadow-black/50 flex items-center justify-center gap-2 touch-manipulation"
               >
-                <Download size={20} />
+                <Download size={isMobile ? 18 : 20} />
                 Download Resume
               </motion.a>
               <motion.button
-                whileTap={{ scale: 0.95 }}
+                whileTap={isMobile ? {} : { scale: 0.95 }}
                 onClick={() =>
                   document
                     .getElementById("contact")
                     .scrollIntoView({ behavior: "smooth" })
                 }
-                className="px-8 py-3 rounded-lg bg-black/40 backdrop-blur-sm text-white font-medium hover:bg-black/60 transition-all duration-300 border border-gray-600/50 shadow-lg shadow-black/50"
+                className="px-6 sm:px-8 py-3 rounded-lg bg-black/40 backdrop-blur-sm text-white font-medium hover:bg-black/60 transition-all duration-200 border border-gray-600/50 shadow-lg shadow-black/50 touch-manipulation"
               >
                 Get In Touch
               </motion.button>
@@ -144,21 +163,33 @@ const Home = () => {
             {/* Social Links */}
             <motion.div
               variants={itemVariants}
-              className="flex justify-center space-x-6 mb-12"
+              className="flex justify-center space-x-4 sm:space-x-6 mb-12"
             >
               {[
-                { icon: Github, href: "https://github.com/Syedjunaid30", label: "GitHub" },
-                { icon: Linkedin, href: "https://www.linkedin.com/in/syedjunaid21", label: "LinkedIn" },
-                { icon: Mail, href: "mailto:junaid68555@gmail.com", label: "Email" },
+                {
+                  icon: Github,
+                  href: "https://github.com/Syedjunaid30",
+                  label: "GitHub",
+                },
+                {
+                  icon: Linkedin,
+                  href: "https://www.linkedin.com/in/syedjunaid21",
+                  label: "LinkedIn",
+                },
+                {
+                  icon: Mail,
+                  href: "mailto:junaid68555@gmail.com",
+                  label: "Email",
+                },
               ].map(({ icon: Icon, href, label }) => (
                 <motion.a
                   key={label}
                   href={href}
-                  whileTap={{ scale: 0.9 }}
-                  className="p-3 rounded-full bg-black/40 backdrop-blur-sm shadow-lg shadow-black/50 text-gray-300 hover:text-white hover:bg-black/60 transition-all duration-300 border border-gray-600/50"
+                  whileTap={isMobile ? {} : { scale: 0.9 }}
+                  className="p-2 sm:p-3 rounded-full bg-black/40 backdrop-blur-sm shadow-lg shadow-black/50 text-gray-300 hover:text-white hover:bg-black/60 transition-all duration-200 border border-gray-600/50 touch-manipulation"
                   aria-label={label}
                 >
-                  <Icon size={24} />
+                  <Icon size={isMobile ? 20 : 24} />
                 </motion.a>
               ))}
             </motion.div>
@@ -167,9 +198,12 @@ const Home = () => {
             <motion.button
               variants={itemVariants}
               onClick={scrollToAbout}
-              className="animate-bounce"
+              className={isMobile ? "opacity-75" : "animate-bounce"}
             >
-              <ChevronDown size={32} className="text-gray-400" />
+              <ChevronDown
+                size={isMobile ? 28 : 32}
+                className="text-gray-400"
+              />
             </motion.button>
           </motion.div>
         </div>

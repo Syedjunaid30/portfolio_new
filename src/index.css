@@ -40,7 +40,7 @@
   }
   
   .section-padding {
-    @apply py-20 px-4 sm:px-6 lg:px-8;
+    @apply py-12 sm:py-20 px-4 sm:px-6 lg:px-8;
   }
   
   .container-custom {
@@ -57,6 +57,23 @@
   
   .card-hover {
     @apply hover:scale-105 hover:-translate-y-2 transition-all duration-300;
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .card-hover {
+      @apply hover:scale-100 hover:translate-y-0;
+    }
+    
+    .glass-effect {
+      @apply backdrop-blur-sm;
+    }
+  }
+
+  /* Touch optimization */
+  .touch-manipulation {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
 
   /* Animated border that subtly moves and changes color on hover */
